@@ -1,0 +1,57 @@
+{% extends "JSPHPBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+
+    <div style="padding: 15px; background-color: #FF9; margin-bottom: 15px">
+        This website is about the <strong>JSPHP</strong>, easy solution for PHP programmers
+        who are being forged to develop client side web applications. <br/>
+
+        Have some nice PHP code and it's need to be used in client side, just copy paste, make some
+        little adjustment and run it.<br/>
+
+        Library can be used in popular browsers and in command line via <strong>node</strong> as well.
+    </div>
+
+    <h2>What is JSPHP?</h2>
+
+    <p><strong>JSPHP</strong> is an open source project which target is to implement standard <strong>PHP</strong> functions
+    in plain javascript.</p>
+
+    <p>Functions should be bulletproof and behave like their native PHP twin brothers.</p>
+
+
+    <h2>Why JSPHP?</h2>
+
+    <p><b>J</b> is for <strong>Jacek</strong> and <b>S</b> for <strong>Siciarek</strong> (my name)
+        and maybe <strong>JavaScript</strong> is involved a little;-). If you need explanation
+        what means <strong>PHP</strong>, this website is probably not for you;-)</p>
+
+
+    <h2>Why to create when php.js (phpjs.org) is on the market?</h2>
+
+    <p>At first I have to confess, when I started to init the repo I did'n know about phpjs.org activity;-)
+        I preciate their job, and huge amount of wonderful work they did. But phpjs is a little bit different
+        solution.</p>
+
+    <p>My idea was to create a bunch of PHP functions in JavaScript which will act exactly like
+        native PHP do. For example, throwing exceptions for the same set of arguments, returning the same
+        data as native PHP functions do.</p>
+
+    <p>Of course there are some limitations, ie. there is no difference
+        in <strong>JavaScript</strong> between <code>1</code> and <code>1.0</code> or there is impossible to create
+        string with no interpolation, <code>'phrase\n'</code> and <code>"phrase\n"</code> acts the same.
+
+    <h2>GitHub</h2>
+
+    Project <strong>JSPHP</strong> is hosted in GitHub repository: <a href="https://github.com/siciarek/jsphp">https://github.com/siciarek/jsphp</a>.
+
+
+    <h2>Acknowledgments</h2>
+
+    <p>At first I would like say "thank you" to Alex The Great Karawajczyk (C.I.U.M.K) who encouraged me
+        to use GitHub, for my projects. I would like tho thank my funtastic wife for her great support as well.</p>
+
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+jsphp:
+    resource: "@JSPHPBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+JSPHPBundle:
+    resource: "@JSPHPBundle/Resources/config/routing.yml"
+
+# Internal routing configuration to handle ESI
+#_internal:
+#    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#    prefix:   /_internal

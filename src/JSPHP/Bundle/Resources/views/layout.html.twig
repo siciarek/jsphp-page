@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8"/>
+    <title>{% block title %}JSPHP - PHP Standard Library in JavaScript{% endblock %}</title>
+    <link rel="icon" sizes="16x16" href="{{ asset("favicon.ico") }}"/>
+
+    {% stylesheets "@JSPHPBundle/Resources/public/css/*" output="css/main.css" %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+
+    {% javascripts "@JSPHPBundle/Resources/public/js/lib/jquery/*" output="js/jquery.js" %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+</head>
+<body>
+<div id="page-wrapper">
+
+    <div id="page-header">
+        <a href="{{ url("_home") }}">{% image "@JSPHPBundle/Resources/public/images/logo.png" output="images/logo.png" %}
+            <img src="{{ asset_url }}" alt="JSPHP logo"/>{% endimage %}</a>
+    </div>
+
+    {% for flashMessage in app.session.flashbag.get("notice") %}
+        <div class="flash-message">
+            <em>Notice</em>: {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% block content_header %}
+
+        <ul id="menu">
+            {% block content_header_more %}
+                <li>{{ link_to(url("_home"), "Home") | raw }}</li>
+                <li>{{ link_to(url("_functions"), "Functions") | raw }}</li>
+                <li>{{ link_to(url("_tests"), "Tests") | raw }}</li>
+                <li>{{ link_to(url("_documentation"), "Documentation") | raw }}</li>
+                <li>{{ link_to(url("_authors"), "Authors") | raw }}</li>
+            {% endblock %}
+        </ul>
+
+        <div style="clear: both"></div>
+
+    {% endblock %}
+
+    <div class="page-content">
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+</div>
+
+<div class="footer">
+    <div class="content">
+
+        <p>&copy; Copyright 2010-2012 Jacek Siciarek</p>
+
+        <div class="box_menu_footer clear_fix">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

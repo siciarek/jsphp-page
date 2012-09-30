@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+
+<project name="smsapi" default="build-all-load" basedir=".">
+
+    <target name="build-all-load" depends="cc">
+
+        <exec executable="php">
+            <arg value="app/console"/>
+            <arg value="doctrine:database:drop"/>
+            <arg value="--force"/>
+        </exec>
+
+        <exec executable="php">
+            <arg value="app/console"/>
+            <arg value="doctrine:database:create"/>
+        </exec>
+
+        <exec executable="php">
+            <arg value="app/console"/>
+            <arg value="doctrine:schema:update"/>
+            <arg value="--force"/>
+        </exec>
+
+    </target>
+
+    <target name="a" depends="cc">
+        <delete verbose="true" includeemptydirs="true">
+            <fileset dir="web/css" includes="**/*"/>
+            <fileset dir="web/images" includes="**/*"/>
+            <fileset dir="web/js" includes="**/*"/>
+        </delete>
+        <exec executable="php">
+            <arg line="app/console assetic:dump"/>
+        </exec>
+    </target>
+
+    <target name="cc">
+        <delete verbose="true" includeemptydirs="true">
+            <fileset dir="app/cache" includes="**/*"/>
+        </delete>
+    </target>
+
+</project>
+

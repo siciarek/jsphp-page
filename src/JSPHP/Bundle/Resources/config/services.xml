@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="twig.extension.jsphp.bundle" class="JSPHP\Bundle\Twig\Extension\BundleExtension" public="false">
+            <tag name="twig.extension"/>
+            <argument type="service" id="twig.loader"/>
+        </service>
+
+        <service id="jsphp.bundle.listener" class="JSPHP\Bundle\EventListener\ControllerListener">
+            <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController"/>
+            <argument type="service" id="twig.extension.jsphp.bundle"/>
+        </service>
+    </services>
+
+    <!--
+    <parameters>
+        <parameter key="jsphp.example.class">JSPHP\Bundle\Example</parameter>
+    </parameters>
+
+    <services>
+        <service id="jsphp.example" class="%jsphp.example.class%">
+            <argument type="service" id="service_id" />
+            <argument>plain_value</argument>
+            <argument>%parameter_name%</argument>
+        </service>
+    </services>
+    -->
+</container>
