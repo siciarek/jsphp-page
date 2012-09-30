@@ -1,3 +1,6 @@
 .idea
 /app/cache/*
 /app/logs/*
+/web/js/*
+/web/images/*
+/web/css/*
