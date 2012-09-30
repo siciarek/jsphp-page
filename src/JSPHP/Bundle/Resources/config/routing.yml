@@ -1,0 +1,6 @@
+_function:
+    pattern:   /functions/{function}.{_format}
+    defaults:  { _controller: JSPHPBundle:Default:function, _format: html }
+    requirements:
+        function: "[A-Za-z_]\w*"
+        _format:  html|xml|json

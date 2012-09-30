@@ -1,121 +1,54 @@
 {% extends "JSPHPBundle::layout.html.twig" %}
 
 {% block content %}
-<style type="text/css">
-    div#functions-index div.column {
-        float: left;
-        /*border: 1px solid gray;*/
-        width: 20%;
-    }
+    <style type="text/css">
+        div#functions-index div.column {
+            float: left;
+            width: {{ 100 / cols }}%;
+        }
 
-    div#functions-index div.initial {
-        font-weight: bold;
-        font-size: 24px;
-    }
+        div#functions-index div.initial {
+            padding-top: 16px;
+            color: #316231;
+            font-weight: normal;
+            font-style: italic;
+            font-size: 28px;
+            font-family: Georgia, "Times New Roman", Times, serif;
+        }
 
-    div#functions-index div#fix {
-        clear: both;
-    }
+        div#functions-index div#fix {
+            clear: both;
+        }
 
-    div#functions-index div.column ul li {
-        padding: 0;
-        margin: 0;
-    }
+        div#functions-index div.column ul li {
+            padding: 0;
+            margin: 0;
+        }
 
-</style>
+        div#functions-index div.column ul li a {
+            color: #313131;
+        }
+    </style>
 
-    <h1>{{ title }}</h1>
+    <h1>functions</h1>
 
     <p>Currently implemented * Packages * Missing * Complete list</p>
 
     <div id="functions-index">
 
-        <div class="column">
+        {% for col in list %}
+            <div class="column">
+                {% for initial, functions in col %}
+                <div class="initial">{{ initial }}</div>
+                <ul>
+                    {% for func in functions %}
+                    <li>{{ link_to(url("_function", {"function" : func}), func) }}</li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            </div>
+        {% endfor %}
 
-            <div class="initial">a</div>
-            <ul>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-            </ul>
-
-            <div class="initial">f</div>
-            <ul>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-            </ul>
-        </div>
-
-        <div class="column">
-            <div class="initial">b</div>
-            <ul>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-            </ul>
-        </div>
-        <div class="column">
-            <div class="initial">c</div>
-            <ul>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-                <li>array_merge</li>
-            </ul>
-        </div>
-        <div class="column">
-            <div class="initial">d</div>
-            <ul>
-                <li>array_key_exists</li>
-                <li>array_key_exists</li>
-                <li>array_key_exists</li>
-                <li>array_key_exists</li>
-                <li>array_key_exists</li>
-                <li>array_key_exists</li>
-                <li>array_key_exists</li>
-                <li>array_key_exists</li>
-                <li>array_key_exists</li>
-                <li>array_key_exists</li>
-                <li>array_key_exists</li>
-            </ul>
-        </div>
-        <div class="column">
-            <div class="initial">e</div>
-            <ul>
-                <li>print_r</li>
-                <li>print_r</li>
-                <li>print_r</li>
-                <li>print_r</li>
-                <li>print_r</li>
-                <li>print_r</li>
-                <li>print_r</li>
-                <li>print_r</li>
-                <li>print_r</li>
-                <li>print_r</li>
-                <li>print_r</li>
-            </ul>
-        </div>
         <div id="fix"></div>
     </div>
 {% endblock %}

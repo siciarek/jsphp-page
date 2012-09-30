@@ -1,5 +1,11 @@
 {% extends "JSPHPBundle::layout.html.twig" %}
 
 {% block content %}
-    <h1>{{ title }}</h1>
+    <h1>tests</h1>
+
+    <p>All the following tests run on the same data.</p>
+    <p>{{ link_to("/jsphp/test/js/index.php", "jsphp implementation test (Qunit)") }}</p>
+    <p>{{ link_to("/jsphp/test/php/index.php", "native PHP comparative test (PHPUnit)") }}</p>
+    <p>{{ link_to("/jsphp/test/js/phpjs.php", "php.js comparative test (Qunit)") }}</p>
+
 {% endblock %}

@@ -33,7 +33,7 @@ class BundleExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            "link_to"  => new \Twig_Function_Method($this, "link_to"),
+            "link_to"  => new \Twig_Function_Method($this, "link_to", array("is_safe" => array("html"))),
         );
     }
 

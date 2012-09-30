@@ -139,7 +139,7 @@ body {
 }
 
 a {
-    color: #ffffe0;
+    color: #316231;
     text-decoration: none;
 }
 
@@ -155,11 +155,12 @@ em {
     font-style: italic;
 }
 
-pre, code {
-    font-family: "Bitstream Vera Sans Mono", monospace;
+pre {
+    padding: 20px;
 }
 
-code {
+pre, code {
+    font-family: "Bitstream Vera Sans Mono", monospace;
     font-weight: bold;
     color: white;
     background-color: #313131;
@@ -369,4 +370,9 @@ ul#menu {
     padding-left: 0;
     margin-right: 16px;
     display: inline;
+}
+
+#menu li a {
+    color: #ffffe0;
+    text-decoration: none;
 }

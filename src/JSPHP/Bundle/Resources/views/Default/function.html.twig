@@ -1,6 +1,36 @@
 {% extends "JSPHPBundle::layout.html.twig" %}
 
 {% block content %}
-    <h1>{{ title }}</h1>
+
+    <h1>{{ name }}</h1>
+
+    <h2>Name</h2>
+    <p>{{ name }}</p>
+
+    <h2>Package</h2>
+    <p>{{ package }}</p>
+
+    <h2>Original PHP documentation</h2>
+    <p>{{ link_to(phpmanual) }}</p>
+
+    <h2>Source code</h2>
+    <p>{{ link_to(code, "richtext") }} | {{ link_to(rawcode, "raw") }}</p>
+
+    <h2>Dependencies</h2>
+    <p>{{ link_to("https://raw.github.com/siciarek/jsphp/master/src/bootstrap.js", "bootstrap.js") }}</p>
+
+    <h2>Limitations</h2>
+    <p>No relevant limitations have been found yet.</p>
+
+    <h2>Tests</h2>
+    <p>All the following tests run on the same data.</p>
+    <p>{{ link_to("/jsphp/test/js/index.php?filter=" ~ name, "jsphp implementation test (Qunit)") }}</p>
+    <p>{{ link_to("/jsphp/test/php/index.php?filter=" ~ name, "native PHP comparative test (PHPUnit)") }}</p>
+    <p>{{ link_to("/jsphp/test/js/phpjs.php?filter=" ~ name, "php.js comparative test (Qunit)") }}</p>
+
+    <h2>Authors</h2>
+
+    <p><a target="_blank" href="http://pl.gravatar.com/profiles/siciarek"><img align="middle" style="margin-right:16px;" src="https://secure.gravatar.com/avatar/d4b77615f3bd9f43f109bee92c908e01?s=32" />Jacek Siciarek</p></a>
+
 {% endblock %}
 
