@@ -1,0 +1,3 @@
+[submodule "web/jsphp"]
+	path = web/jsphp
+	url = https://github.com/siciarek/jsphp
