@@ -2,5 +2,9 @@
 php app/console doctrine:generate:entity --no-interaction --with-repository --format=yml --entity="JSPHPBundle:Funct" --fields="name:string(127) package:varchar(127) description:text"
 
 php app/console doctrine:generate:entity --no-interaction --with-repository --format=yml --entity="JSPHPBundle:Comment" --fields="author:email content:text created_at:datetime"
+
 # UPDATE:
 php app/console doctrine:generate:entities --no-backup JSPHPBundle
+
+# CREATE CRUD:
+php app\console doctrine:generate:crud --route-prefix=/admin/function --entity="JSPHPBundle:Funct" --with-write

@@ -44,7 +44,8 @@
 
     <target name="cc">
         <delete verbose="true" includeemptydirs="true">
-            <fileset dir="app/cache" includes="**/*"/>
+            <fileset dir="app/cache" excludes=".gitkeep" includes="**/*"/>
+            <fileset dir="app/logs" excludes=".gitkeep" includes="**/*"/>
         </delete>
     </target>
 

@@ -1,7 +1,11 @@
 .idea
 /app/config/parameters.yml
+
 /app/cache/*
+!/app/cache/.gitkeep
 /app/logs/*
+!/app/logs/.gitkeep
+
 /web/js/*
 /web/images/*
 /web/css/*
