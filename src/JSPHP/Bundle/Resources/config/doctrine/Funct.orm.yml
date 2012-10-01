@@ -1,0 +1,30 @@
+JSPHP\Bundle\Entity\Funct:
+    type: entity
+    table: null
+    repositoryClass: JSPHP\Bundle\Entity\FunctRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: '256'
+        package:
+            type: string
+            length: '256'
+        description:
+            type: text
+            length: null
+        limitations:
+            type: text
+            length: null
+        demo:
+            type: text
+            length: null
+        created_at:
+            type: datetime
+    lifecycleCallbacks:
+        prePersist:
+            - setCreatedAtValue

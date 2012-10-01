@@ -1,0 +1,20 @@
+JSPHP\Bundle\Entity\Comment:
+    type: entity
+    table: null
+    repositoryClass: JSPHP\Bundle\Entity\CommentRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        author:
+            type: string
+            length: '256'
+        content:
+            type: text
+            length: null
+        created_at:
+            type: datetime
+            length: null
+    lifecycleCallbacks: {  }
