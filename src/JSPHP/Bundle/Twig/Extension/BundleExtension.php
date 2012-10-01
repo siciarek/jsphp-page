@@ -45,7 +45,6 @@ class BundleExtension extends \Twig_Extension
 
     public function link_to($url, $name = null, $attrs = array())
     {
-
         if ($name === null or is_array($name)) {
             if (is_array($name) and is_object(json_decode(json_encode($name)))) {
                 foreach ($name as $key => $value) {

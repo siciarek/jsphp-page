@@ -32,11 +32,16 @@
 
         <ul id="menu">
             {% block content_header_more %}
-                <li>{{ link_to(url("_home"), "Home") | raw }}</li>
-                <li>{{ link_to(url("_functions"), "Functions") | raw }}</li>
-                <li>{{ link_to(url("_tests"), "Tests") | raw }}</li>
-                <li>{{ link_to(url("_documentation"), "Documentation") | raw }}</li>
-                <li>{{ link_to(url("_authors"), "Authors") | raw }}</li>
+                <li>{{ link_to(url("_home"), "Home") }}</li>
+                <li>{{ link_to(url("_functions"), "Functions") }}</li>
+                <li>{{ link_to(url("_tests"), "Tests") }}</li>
+                <li>{{ link_to(url("_documentation"), "Documentation") }}</li>
+                <li>{{ link_to(url("_authors"), "Authors") }}</li>
+                <li>{{ link_to(url("_admin_panel"), "Admin panel") }}</li>
+                {% if app.user %}
+                    <li>{{ link_to(url("_admin_logout"), "Sign out") }}</li>
+                {% endif %}
+            
             {% endblock %}
         </ul>
 

@@ -16,17 +16,4 @@
         </service>
     </services>
 
-    <!--
-    <parameters>
-        <parameter key="jsphp.example.class">JSPHP\Bundle\Example</parameter>
-    </parameters>
-
-    <services>
-        <service id="jsphp.example" class="%jsphp.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
-        </service>
-    </services>
-    -->
 </container>

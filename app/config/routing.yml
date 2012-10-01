@@ -3,6 +3,10 @@ jsphp:
     type:     annotation
     prefix:   /
 
+jsphp_secured:
+    resource: "@JSPHPBundle/Controller/AdminController.php"
+    type:     annotation
+
 JSPHPBundle:
     resource: "@JSPHPBundle/Resources/config/routing.yml"
 

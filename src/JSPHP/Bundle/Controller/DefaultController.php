@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+use JMS\SecurityExtraBundle\Annotation\Secure;
+
 class DefaultController extends Controller
 {
     /**

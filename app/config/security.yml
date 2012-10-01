@@ -15,7 +15,7 @@ security:
             memory:
                 users:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    siciarek: { password: 21101966, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:
@@ -23,17 +23,16 @@ security:
             security: false
 
         login:
-            pattern:  ^/demo/secured/login$
+            pattern:  ^/admin/login$
             security: false
 
         secured_area:
-            pattern:    ^/demo/secured/
+            pattern:    ^/admin/
             form_login:
-                check_path: /demo/secured/login_check
-                login_path: /demo/secured/login
+                check_path: /admin/login_check
+                login_path: /admin/login
             logout:
-                path:   /demo/secured/logout
-                target: /demo/
+                path:   /admin/logout
             #anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
