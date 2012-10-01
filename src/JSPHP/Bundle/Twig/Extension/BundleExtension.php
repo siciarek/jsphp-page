@@ -43,10 +43,34 @@ class BundleExtension extends \Twig_Extension
             '<span style="background-color:yellow">\1</span>', $sentence);
     }
 
-    public function link_to($url, $name = null)
+    public function link_to($url, $name = null, $attrs = array())
     {
-        $name = $name === null ? $url : $name;
-        return sprintf('<a href="%s" title="%s">%s</a>', $url, $name, $name);
+
+        if ($name === null or is_array($name)) {
+            if (is_array($name) and is_object(json_decode(json_encode($name)))) {
+                foreach ($name as $key => $value) {
+                    if (!array_key_exists($key, $attrs)) {
+                        $attrs[$key] = $value;
+                    }
+                }
+            }
+            $name = $url;
+        }
+
+        $strattrs = "";
+
+        if(!array_key_exists("title", $attrs)) {
+            $attrs["title"] = $name;
+        }
+
+        foreach($attrs as $key => $value) {
+            if(empty($value)) {
+                continue;
+            }
+            $strattrs .= sprintf(' %s="%s"', $key, $value);
+        }
+
+        return sprintf('<a href="%s"%s>%s</a>', $url, $strattrs, $name);
     }
 
     /**

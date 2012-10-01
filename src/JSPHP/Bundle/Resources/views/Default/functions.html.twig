@@ -42,7 +42,7 @@
                 <div class="initial">{{ initial }}</div>
                 <ul>
                     {% for func in functions %}
-                    <li>{{ link_to(url("_function", {"function" : func}), func) }}</li>
+                    <li>{{ link_to(url("_function", {"function" : func}), func, {"target":"_blank"}) }}</li>
                     {% endfor %}
                 </ul>
                 {% endfor %}

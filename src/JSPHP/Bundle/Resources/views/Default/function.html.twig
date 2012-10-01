@@ -11,22 +11,22 @@
     <p>{{ package }}</p>
 
     <h2>Original PHP documentation</h2>
-    <p>{{ link_to(phpmanual) }}</p>
+    <p>{{ link_to(phpmanual, {"target":"_blank"}) }}</p>
 
     <h2>Source code</h2>
-    <p>{{ link_to(code, "richtext") }} | {{ link_to(rawcode, "raw") }}</p>
+    <p>{{ link_to(code, "richtext", {"target":"_blank"}) }} | {{ link_to(rawcode, "raw", {"target":"_blank"}) }}</p>
 
     <h2>Dependencies</h2>
-    <p>{{ link_to("https://raw.github.com/siciarek/jsphp/master/src/bootstrap.js", "bootstrap.js") }}</p>
+    <p>{{ link_to("https://raw.github.com/siciarek/jsphp/master/src/bootstrap.js", "bootstrap.js", {"target":"_blank"}) }}</p>
 
     <h2>Limitations</h2>
     <p>No relevant limitations have been found yet.</p>
 
     <h2>Tests</h2>
     <p>All the following tests run on the same data.</p>
-    <p>{{ link_to("/jsphp/test/js/index.php?filter=" ~ name, "jsphp implementation test (Qunit)") }}</p>
-    <p>{{ link_to("/jsphp/test/php/index.php?filter=" ~ name, "native PHP comparative test (PHPUnit)") }}</p>
-    <p>{{ link_to("/jsphp/test/js/phpjs.php?filter=" ~ name, "php.js comparative test (Qunit)") }}</p>
+    <p>{{ link_to("/jsphp/test/js/index.php?filter=" ~ name, "jsphp implementation test (Qunit)", {"target":"_blank"}) }}</p>
+    <p>{{ link_to("/jsphp/test/php/index.php?filter=" ~ name, "native PHP comparative test (PHPUnit)", {"target":"_blank"}) }}</p>
+    <p>{{ link_to("/jsphp/test/js/phpjs.php?filter=" ~ name, "php.js comparative test (Qunit)", {"target":"_blank"}) }}</p>
 
     <h2>Authors</h2>
 
