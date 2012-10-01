@@ -3,23 +3,30 @@
 
 <project name="smsapi" default="build-all-load" basedir=".">
 
-    <target name="build-all-load" depends="cc">
+    <target name="build-all-load" depends="a">
 
         <exec executable="php">
-            <arg value="app/console"/>
-            <arg value="doctrine:database:drop"/>
-            <arg value="--force"/>
+            <arg value="app/console" />
+            <arg value="doctrine:generate:entities"/>
+            <arg value="--no-backup" />
+            <arg value="JSPHPBundle" />
         </exec>
 
         <exec executable="php">
-            <arg value="app/console"/>
-            <arg value="doctrine:database:create"/>
+            <arg value="app/console" />
+            <arg value="doctrine:database:drop" />
+            <arg value="--force" />
         </exec>
 
         <exec executable="php">
-            <arg value="app/console"/>
-            <arg value="doctrine:schema:update"/>
-            <arg value="--force"/>
+            <arg value="app/console" />
+            <arg value="doctrine:database:create" />
+        </exec>
+
+        <exec executable="php">
+            <arg value="app/console" />
+            <arg value="doctrine:schema:update" />
+            <arg value="--force" />
         </exec>
 
     </target>
