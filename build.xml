@@ -31,6 +31,12 @@
 
     </target>
 
+    <target name="up">
+        <exec executable="php">
+            <arg line="composer.phar update"/>
+        </exec>
+    </target>
+
     <target name="a" depends="cc">
         <delete verbose="true" includeemptydirs="true">
             <fileset dir="web/css" includes="**/*"/>
